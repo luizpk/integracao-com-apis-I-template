@@ -1,30 +1,16 @@
-import React, { useState } from "react";
+import React from 'react'
 
-function AddUsuario(props) {
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
+const AddUsuario = () => {
 
+
+
+
+
+
+    
   return (
-    <>
-      <p>Adicionar novo usuario</p>
-      <input
-        placeholder={"nome"}
-        value={nome}
-        onChange={(e) => {
-          setNome(e.target.value);
-        }}
-      />
-      <input
-        type="email"
-        placeholder={"email"}
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <button>Enviar</button>
-    </>
-  );
+    <div>AddUsuario</div>
+  )
 }
 
-export default AddUsuario;
+export default AddUsuario
