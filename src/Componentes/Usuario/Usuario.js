@@ -54,6 +54,25 @@ import { useEffect, useState } from "react"
       
       }
 
+      const deletarUsuario = () => {
+
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${usuario.id}`,{
+            headers: {
+              Authorization: "luiz-pinheiro-ammal"
+            }
+          })
+          .then((resposta)=>{
+            alert("Usuário deletado com sucesso.")
+            pegarUsuarioPeloId()
+            
+        })
+          .catch((erro)=>{
+            console.log(erro.response.data.message)
+          })
+          
+          }
+      
+
     return(
         <>
 
@@ -66,6 +85,7 @@ import { useEffect, useState } from "react"
         }
 
         <button onClick={()=>setEditar(!editar)}>Editar</button>
+        <button onClick={deletarUsuario}>Deletar Usuário</button>
 
        
 
